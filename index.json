@@ -1,7 +1,7 @@
 [
     {
-        "id": "ACIAcquier",
-        "name": "ACI Acquier Application",
-        "description": "ACI Acquier batch processing entry point"
+        "id": "CMMACQ",
+        "name": "CMM Acquier Application",
+        "description": "CMM Acquier batch processing entry point"
     }
 ]
