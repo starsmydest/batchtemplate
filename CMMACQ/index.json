@@ -1,0 +1,12 @@
+[
+    {
+        "id": "resetregion",
+        "name": "reset region",
+        "description": "This job will restore region for batch rerun"
+    },
+    {
+        "id": "DailyBatch",
+        "name": "Daily Batch",
+        "description": "This job will run acq daily batch"
+    }
+]
