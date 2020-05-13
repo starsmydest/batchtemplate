@@ -1,0 +1,42 @@
+{
+    "templateMetadata": {
+        "description": "ACQ RESET JOB"
+    },
+    "parameters": {
+        "jobName": {
+            "type": "string",
+            "defaultValue": "resetacq",
+            "metadata": {
+                "description": "The job name",
+                "advancedType": "job-id"
+            }
+        },
+        "poolId": {
+            "type": "string",
+            "defaultValue": "ignored",
+            "metadata": {
+                "description": "The pool id"
+            }
+        }
+    },
+    "job": {
+        "type": "Microsoft.Batch/batchAccounts/jobs",
+        "properties": {
+            "id": "[parameters('jobName')]",
+            "displayName": "[parameters('jobName')]",
+            "poolInfo": {
+                "poolId": "[parameters('poolId')]"
+            },
+            "onAllTasksComplete": "terminateJob",
+            "taskFactory": {
+            "type": "taskCollection",
+            "tasks": [
+              {
+                "id" : "RESET_ACQ",
+                "commandLine": "/bin/bash -c '$AZ_BATCH_NODE_MOUNTS_DIR/acicmmbatch-share2/azure_batch_package/Acquirer/ACQ/PERF/files/RESET_ALL_REGION.ksh'"
+              }
+            ]
+          }
+        }
+    }
+}
