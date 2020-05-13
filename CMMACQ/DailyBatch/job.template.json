@@ -1,0 +1,342 @@
+{
+    "templateMetadata": {
+        "description": "ACQ DAILY BATCH"
+    },
+    "parameters": {
+        "jobName": {
+            "type": "string",
+            "defaultValue": "acqjob",
+            "metadata": {
+                "description": "The job name",
+                "advancedType": "job-id"
+            }
+        },
+        "poolId": {
+            "type": "string",
+            "defaultValue": "ignored",
+            "metadata": {
+                "description": "The pool id"
+            }
+        }
+    },
+    "job": {
+        "type": "Microsoft.Batch/batchAccounts/jobs",
+        "properties": {
+            "id": "[parameters('jobName')]",
+            "displayName": "[parameters('jobName')]",
+            "poolInfo": {
+                "poolId": "[parameters('poolId')]"
+            },
+            "onAllTasksComplete": "terminateJob",
+            "taskFactory": {
+            "type": "taskCollection",
+            "UsesTaskDependencies": "true",
+            "tasks": [
+        {
+            "dependencies": [],
+            "id": "G00S011B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S011B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S011B"
+                }
+            ],
+            "id": "MBR514XX",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh MBR514XX'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S011B"
+                }
+            ],
+            "id": "G00S014B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S014B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "MBR514XX"
+                }
+            ],
+            "id": "G00S664B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S664B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "MBR514XX"
+                }
+            ],
+            "id": "G00S508B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S508B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "MBR514XX"
+                }
+            ],
+            "id": "G00S756B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S756B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S756B"
+                }
+            ],
+            "id": "G00S757B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S757B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S757B"
+                }
+            ],
+            "id": "G00S753B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S753B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S753B"
+                }
+            ],
+            "id": "G00S758B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S758B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S758B"
+                }
+            ],
+            "id": "G00STD6B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00STD6B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S014B"
+                }
+            ],
+            "id": "G00SA09B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00SA09B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00SA09B"
+                }
+            ],
+            "id": "G00S678B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S678B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00SA09B"
+                }
+            ],
+            "id": "G00S621B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S621B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00SA09B"
+                }
+            ],
+            "id": "G00S608B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S608B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S011B"
+                }
+            ],
+            "id": "G00S550B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S550B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S550B"
+                }
+            ],
+            "id": "G00S551B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S551B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S550B"
+                }
+            ],
+            "id": "G00S552B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S552B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S551B"
+                },
+                {
+                    "id": "G00S552B"
+                }
+            ],
+            "id": "G00S565B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S565B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S551B"
+                },
+                {
+                    "id": "G00S552B"
+                }
+            ],
+            "id": "G00S595B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S595B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S553B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S553B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S551B"
+                },
+                {
+                    "id": "G00S552B"
+                }
+            ],
+            "id": "G00S554B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S554B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S569B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S569B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S580B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S580B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S582B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S582B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S584B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S584B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S587B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S587B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S587B"
+                }
+            ],
+            "id": "G00S599B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S599B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S587B"
+                }
+            ],
+            "id": "G00S712B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S712B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S577B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S577B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S590B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S590B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S588B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S588B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S588B"
+                }
+            ],
+            "id": "G00S710B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S710B'"
+        },
+        {
+            "dependencies": [
+                {
+                    "id": "G00S595B"
+                }
+            ],
+            "id": "G00S578B",
+            "commandLine": "/bin/bash -c '$AZ_BATCH_APP_PACKAGE_acicmmacq1_1/azure_batch_package/aci/java_utils/ESS_UTL_BATCH_SUBMIT.ksh G00S578B'"
+        }
+
+             ]
+          }
+        }
+    }
+}
