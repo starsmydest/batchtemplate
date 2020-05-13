@@ -1,0 +1,7 @@
+[
+    {
+        "id": "resetregion",
+        "name": "reset region",
+        "description": "This job will restore region for batch rerun"
+    }
+]
