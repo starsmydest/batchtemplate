@@ -30,7 +30,7 @@
             "onAllTasksComplete": "terminateJob",
             "taskFactory": {
             "type": "taskCollection",
-            "UsesTaskDependencies": "true",
+            "usesTaskDependencies": true,
             "tasks": [
         {
             "dependencies": [],
